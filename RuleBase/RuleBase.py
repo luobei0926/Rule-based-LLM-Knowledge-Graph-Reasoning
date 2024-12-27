@@ -11,7 +11,7 @@ def rule_base(question, max_pop, label_dict, label_description_path, entity_extr
     # 1. 从问题中提取条件实体、目的实体、实体类型
     print("\n======1. 从问题中提取条件实体和实体类型======")
     conditions, aims = extract.extract(question, label_description_path, entity_extract_example_path)
-    conditions = entity_retriever.retrieve_matching_entities(conditions)
+    conditions = entity_retriever.retrieve_matching_entities(conditions, neo4j_database_name)
 
     if len(conditions) != 0:
         print(f"匹配完之后的conditions:{conditions}")

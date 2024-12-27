@@ -12,9 +12,9 @@ def create_output_file(output_dir, method, model, max_pop, top_k, timestamp):
     """Create an output file with method, model, max_pop, and top_k in the file name to avoid overwriting."""
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    output_file = os.path.join(output_dir,
-                               f"evaluation_results_RuleBase_spark_maxpop5_topk5_20241226_163548.csv")
-    # output_file = os.path.join(output_dir, f"evaluation_results_{method}_{model}_maxpop{max_pop}_topk{top_k}_{timestamp}.csv")
+    # output_file = os.path.join(output_dir,
+    #                            f"evaluation_results_RuleBase_spark_maxpop5_topk5_20241226_163548.csv")
+    output_file = os.path.join(output_dir, f"evaluation_results_{method}_{model}_maxpop{max_pop}_topk{top_k}_{timestamp}.csv")
     return output_file
 
 

@@ -3,7 +3,7 @@ import numpy as np
 from transformers import AutoTokenizer, AutoModel
 from sklearn.metrics.pairwise import cosine_similarity
 import pickle
-
+import os
 tokenizer = AutoTokenizer.from_pretrained('/Users/yanzhenxing/Desktop/科大-讯飞/code_RAG/model/sentence-transformers/all-mpnet-base-v2')
 model = AutoModel.from_pretrained('/Users/yanzhenxing/Desktop/科大-讯飞/code_RAG/model/sentence-transformers/all-mpnet-base-v2')
 
@@ -52,7 +52,7 @@ def compute_embedding(text, tokenizer, model, device):
     return embedding.cpu().numpy()
 
 
-def retrieve_matching_entities(question_entities, entity_embeddings_path = "./data/chatdoctor5k/entity_embeddings.pkl", device="cpu"):
+def retrieve_matching_entities(question_entities, neo4j_database_name, entity_embeddings_path = "", device="cpu"):
     """
     实时计算问题实体与实体库中的实体相似度，并替换原问题实体。
 
@@ -68,11 +68,17 @@ def retrieve_matching_entities(question_entities, entity_embeddings_path = "./da
     """
     # 加载实体库的嵌入和实体名称
     print("加载实体库嵌入...")
-    entities, entity_embeddings = load_entity_embeddings(entity_embeddings_path)
+
 
     # 遍历每个问题实体
     for i, x in enumerate(question_entities):
         kg_entity = x[0]  # 问题实体
+        kg_type = x[1]
+        if os.path.exists(entity_embeddings_path):
+            entity_embeddings_path = f"./data/{neo4j_database_name}/EncodedEntity/{kg_type}embeddings.pkl"#对应条件类别的向量路径
+        else:
+            entity_embeddings_path = "./data/chatdoctor5k/EncodedEntity/entity_embeddings.pkl"
+        entities, entity_embeddings = load_entity_embeddings(entity_embeddings_path)
 
         # 为问题实体生成嵌入
         kg_entity_emb = compute_embedding(kg_entity, tokenizer, model, device)
