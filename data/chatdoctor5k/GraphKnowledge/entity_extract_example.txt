@@ -8,12 +8,12 @@
 
 示例3:
 输入: 医生，我的脚有 pain in my feet，而且感觉很平。我不确定是怎么回事。
-输出: Foot pain,症状.possible_disease,医学检查;medication,药物
+输出: Foot pain,症状.possible_disease,医学检查;medication,药物;medical_test,医学检查
 
 
 示例4:
 输入: 医生，我最近一直经历突然且频繁的 panic attacks。我不知道该怎么办。
-输出: panic attacks,症状.medical_test,医学检查;medication,药物
+输出: panic attacks,症状.medical_test,医学检查;medication,药物;medical_test,医学检查
 
 示例5:
 输入: 医生，我认为我可能有thoracic aortic aneurysm。你可以告诉我我需要去检查什么吗？

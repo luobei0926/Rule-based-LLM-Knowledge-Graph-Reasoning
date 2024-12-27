@@ -24,6 +24,7 @@ def write_results_to_csv(output_file, data):
     df.to_csv(output_file, mode='a', header=False, index=False)  # 始终禁用表头和行索引写入
 
 
+
 def evaluate_and_save_results(df, method, max_pop, top_k, model, label_dict, label_description_path, entity_extract_example_path, ReferenceTemplate_path, driver, neo4j_database_name, output_file, metric, questions, reference_answers):
     """
     Evaluate the answers and save the results in the specified file.
