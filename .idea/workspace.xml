@@ -14,6 +14,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -26,13 +29,13 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
+    "WebServerToolWindowFactoryState": "false",
     "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
     "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "last_opened_file_path": "/Users/yanzhenxing/Desktop/科大-讯飞/论文-mindmap-nlp/BackTrack-master",
+    "last_opened_file_path": "/Users/yanzhenxing/Desktop/科大-讯飞/code_RAG/BackTrack-master",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)"
   }
@@ -46,6 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1735025527380</updated>
       <workItem from="1735025529087" duration="3903000" />
+      <workItem from="1735702626205" duration="579000" />
     </task>
     <servers />
   </component>
@@ -57,7 +61,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>143</line>
+          <line>144</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
