@@ -77,7 +77,7 @@ def retrieve_matching_entities(question_entities, neo4j_database_name, entity_em
         if os.path.exists(entity_embeddings_path):
             entity_embeddings_path = f"./data/{neo4j_database_name}/EncodedEntity/{kg_type}embeddings.pkl"#对应条件类别的向量路径
         else:
-            entity_embeddings_path = "./data/chatdoctor5k/EncodedEntity/entity_embeddings.pkl"
+            entity_embeddings_path = f"./data/{neo4j_database_name}/EncodedEntity/entity_embeddings.pkl"
         entities, entity_embeddings = load_entity_embeddings(entity_embeddings_path)
 
         # 为问题实体生成嵌入
