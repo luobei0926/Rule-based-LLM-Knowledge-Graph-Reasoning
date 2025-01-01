@@ -156,3 +156,6 @@ if __name__ == "__main__":
     metric = "BERTScore"  # 选择实验的指标，包括：BERTScore
     output_file = create_output_file(output_dir, method, generate_answer_model, max_pop, top_k, timestamp)
     evaluate_and_save_results(df, method, max_pop, top_k, generate_answer_model, label_dict, label_description_path, entity_extract_example_path, ReferenceTemplate_path, driver, neo4j_database_name, output_file, metric, questions, reference_answers)
+
+
+
